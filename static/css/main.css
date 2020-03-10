@@ -1,0 +1,19 @@
+img{
+    width: 20px;
+    height:20px;
+    display: block;
+    margin-left:auto;
+    margin-right:auto;
+}
+table,tr,td{
+    margin-top: 100px;
+    background: burlywood;
+    border:2px solid black;
+    margin-left:auto;
+    margin-right:auto;
+}
+
+.gameboard_info_white {
+	border:3px solid black;
+    text-align: center;
+}

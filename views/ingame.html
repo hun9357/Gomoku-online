@@ -1,0 +1,47 @@
+
+<html>
+
+
+<body>
+
+	<div class="col-lg-2 col-sm-2 wow fadeInLeft delay-05s">
+		<div class="service-list gameboard_info_white">
+			<div class="service-list-col1">
+				<h3>Host</h3>
+				<img style = "width:32px;height:32px;"src = "../img/wstone.png">
+				<h3 id = "host" class="animated fadeInLeft delay-07s" style="color:black"></h3>
+			</div>
+			<div class="service-list-col2">
+				<h3>Client</h3>
+				<img style = "width:32px;height:32px;"src = "../img/bstone.png">
+				<h3 id="client" class="animated fadeInLeft delay-07s"></h3>
+			</div>
+		</div>
+
+		<div class="service-list gameboard_info_black">
+			
+		</div>
+	</div>
+	
+	</div>
+
+	
+
+	<div class = "gameboard">
+	    <table class = "board">
+	        <tbody>
+	            
+	        </tbody>
+	    </table>
+		<form action="/ingame" method="POST">
+		<input type = "hidden" id="sessionId" value={{username}} />
+		<input type="hidden" id="roomname" value={{roomname}} />
+		<input type ="hidden" id="cls" value={{cls}} />
+		</form>
+	</div>
+
+<script src="../js/game.js"></script>
+<script src="../js/ingame.js"></script>
+</body>
+
+</html>

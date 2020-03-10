@@ -1,0 +1,141 @@
+
+<html lang="en">
+
+<head>
+
+
+</head>
+
+<body>
+
+  <!-- Navigation -->
+  <nav class = "man-nav-outer" id = "test">
+    <div class = "container">
+        <ul class="main-nav">
+        <li><a href="/home">Home</a></li>
+				<li><a href="/lobby">Lobby</a></li>
+				<li><a href="/logout">Logout</a></li>
+        </ul>
+    </div>
+  </nav>
+
+  <!-- Page Content -->
+  <div class="container">
+    {{#ifnoteq user.admin "1"}}
+    <!-- Jumbotron Header -->
+    <header class="jumbotron my-4">
+      <h1 class="display-3">Hello {{user.username}}!</h1>
+    </header>
+
+    <!-- /.row -->
+     <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-table"></i>
+            stats</div>
+          <div class="card-body">
+            <div class="row text-center">
+
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class = "card-header">Wins</div>
+          <div class="card-body align-items-center d-flex justify-content-center">
+            <p class="card-text" style="font-size:200%">{{win}}</p>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class = "card-header">Loses</div>
+          <div class="card-body align-items-center d-flex justify-content-center">
+            <p class="card-text" style="font-size:200%">{{lose}}</p>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class = "card-header">Winning Rate</div>
+          <div class="card-body align-items-center d-flex justify-content-center">
+            <p class="card-text" style="font-size:200%">{{rating}}</p>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="col-lg-3 col-md-6 mb-4">
+        <div class="card h-100">
+          <div class = "card-header">Played</div>
+          <div class="card-body align-items-center d-flex justify-content-center">
+            <p class="card-text" style="font-size:200%">{{total}}</p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Past Matches -->
+        <div class="table-responsive">
+          <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+            <thead>
+              <tr>
+                <th>Username</th>
+                <th>Opponent</th>
+                <th>Result</th>
+                <th>date</th>
+              </tr>
+            </thead>
+            <tbody>
+            <tr>
+                <td>Tiger Nixon</td>
+                <td>Anonymous</td>
+                <td>Victory</td>
+                <td>12/1/2019</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </div>
+    </div>
+        {{/ifnoteq}}
+
+  {{#ifeq user.admin "1"}}
+    <header class="jumbotron my-4">
+      <h1 class="display-3">Admin</h1>
+    </header>
+   <div class="card mb-3">
+          <div class="card-header">
+            <i class="fas fa-table"></i>
+            Players List</div>
+          <div class="card-body">
+            <div class="table-responsive">
+              <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                <thead>
+                  <tr>
+                    <th>Username</th>
+                    <th>Nickname</th>
+                    <th>Ban</th>
+                  </tr>
+                </thead>
+                <tbody>
+                {{#allusr}}
+                <tr>
+                    
+                    <td>{{username}}</td>
+                    <td>{{nickname}}</td> 
+                    <td><button type = "button">X</button></td>
+                  </tr>
+                {{/allusr}}
+                </tbody>
+               
+              </table>
+            </div>
+          </div>
+        </div>
+    {{/ifeq}}
+  </div>
+  <!-- /.container -->
+</body>
+
+</html>

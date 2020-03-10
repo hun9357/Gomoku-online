@@ -1,0 +1,79 @@
+
+<html lang="en">
+
+<head>
+
+
+</head>
+
+<body>
+<nav class = "man-nav-outer" id = "test">
+    <div class = "container">
+        <ul class="main-nav">
+        <li><a href="/home">Home</a></li>
+        <li><a href="/mypage">Mypage</a></li>
+		<li><a href="/logout">Logout</a></li>
+        </ul>
+    </div>
+  </nav>
+
+<div class = "container">
+    <div class = "row">
+        <div class = "column1">
+            <div class="card">
+                <div class="card-body">
+                    <div class="table-responsive">
+                    <table class="table table-bordered" id="dataTable" width="100%" >
+                        <thead>
+                        <tr>
+                            <th>Room</th>
+                            <th>Join</th>
+                            <th>In room</th>
+                        </tr>
+                        </thead>
+                        <tfoot>
+                        <tr>
+                            <th>Room</th>
+                            <th>Join</th>
+                            <th>In room</th>
+                        </tr>
+                        </tfoot>
+                        <tbody id = "list">
+                        </tbody>
+                    </table>
+                    </div>
+                </div>
+                <form action="/ingame">
+                <div class="card-footer">
+                        <input type = "submit" class="btn btn-primary btn-lg" value = "Create Room"/>
+                        <input type = "hidden" id="user" name="username" value={{usr.username}} />
+                        <input type="hidden" name="roomname" value={{usr.username}} />
+                        <input type="hidden" name="cls" value = 'host' />
+                </div>
+                </form>
+            </div>
+        </div>
+        <div class ="column2">
+            <div class = "card" >
+                <div class = "card-header"> Online</div>
+                <div class = "card-body">
+                    <ul id="listOnline">
+                        
+                    </ul>
+                <div class="table-responsive">
+                </div>
+                </div>
+            </div>
+        </div>
+        <div style="float:left;width:300px;height:250px;overflow:scroll-y;padding:10px;">
+            <div id="chat"></div>
+                <input id="msg" style="width:200px;" />
+                <input type="button" id="datasend" value="send" />
+            </div>
+        </div> 
+</div>
+    
+<script src="../js/lobby.js"></script>
+
+
+</body>

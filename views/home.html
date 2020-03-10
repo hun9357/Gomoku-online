@@ -1,0 +1,111 @@
+
+<html>
+
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, maximum-scale=1">
+
+	<title>Homepage</title>
+
+	
+
+</head>
+
+<body>
+	{{#ifeq usr.username "none"}}
+	<nav class="main-nav-outer" id="test">
+		<!--main-nav-start-->
+		<div class="container">
+			<ul class="main-nav">
+				<li><a href="/home">Home</a></li>
+				<li><a href="/login">Login</a></li>
+				<li><a href="/register">Register</a></li>
+			</ul>
+		</div>
+	</nav>
+	{{/ifeq}}
+	{{#ifnoteq usr.username "none"}}
+	<nav class="main-nav-outer" id="test">
+		<!--main-nav-start-->
+		<div class="container">
+			<ul class="main-nav">
+				<li><a href="/home">Home</a></li>
+				<li><a href="/lobby">Lobby</a></li>
+				<li><a href="/mypage">Mypage</a></li>
+			</ul>
+		</div>
+	</nav>
+	{{/ifnoteq}}
+	<!--main-nav-end-->
+
+
+	<header class="header" id="header">
+		<!--header-start-->
+		<div class="container">
+			<figure class="logo animated fadeInDown delay-07s">
+				<img src="../img/logo.png" alt="" style="width: 200px; height: 150px;">
+			</figure>
+			<h1 class="animated fadeInDown delay-07s">Welcome to Gomoku Game</h1>
+			<ul class="we-create animated fadeInUp delay-1s">
+				<li>Multi-user 5-in-a row tic tac toe game</li>
+			</ul>
+			{{#ifeq usr.username "none"}}
+				<a class="link animated fadeInUp delay-1s servicelink" href="/login">Play!</a>
+			{{/ifeq}}
+			{{#ifnoteq usr.username "none"}}
+				<a class="link animated fadeInUp delay-1s servicelink" href="/mypage">Play!</a>
+			{{/ifnoteq}}
+		</div>
+	</header>
+	<!--header-end-->
+
+	<section class="main-section" id="service">
+		<!--main-section-start-->
+		<div class="container">
+			<h2 class="animated fadeInDown delay-07s">Rules</h2>
+			<h6 class="animated fadeInDown delay-07s">These are the game rules you need to know</h6>
+			<div class="row">
+				<div class="col-lg-4 col-sm-6 wow fadeInLeft delay-05s">
+					<div class="service-list">
+						<div class="service-list-col1">
+							<img style = "width:32px;height:32px;"src = "../img/chess.png">
+						</div>
+						<div class="service-list-col2">
+							<h3 class="animated fadeInLeft delay-07s">Basic Rule</h3>
+							<p class="animated fadeInLeft delay-07s">Black plays first, and players alternate in placing a stone of their color on an empty spot.</p>
+						</div>
+					</div>
+					<div class="service-list">
+						<div class="service-list-col1">
+							<img style = "width:32px;height:32px;"src = "../img/chess.png">
+						</div>
+						<div class="service-list-col2">
+							<h3 class="animated fadeInLeft delay-07s">Goal</h3>
+							<p class="animated fadeInLeft delay-07s">Each players' goal is to create an unbroken row of five stones horizontally, vertically, or diagonally.</p>
+						</div>
+					</div>
+					<div class="service-list">
+						<div class="service-list-col1">
+							<img style = "width:32px;height:32px;"src = "../img/chess.png">
+						</div>
+						<div class="service-list-col2">
+							<h3 class="animated fadeInLeft delay-07s">Exception</h3>
+							<p class="animated fadeInLeft delay-07s">The game ends as a draw either if the players agree on it or if the board is fully covered with stones</p>
+						</div>
+					</div>
+				</div>
+				<figure class="col-lg-8 col-sm-6 logo animated fadeInRight delay-07s">
+					<img src="../img/baduk.png" alt="" style="width: 500px; height: 400px;">
+				</figure>
+
+			</div>
+		</div>
+	</section>
+	<!--main-section-end-->
+
+	
+
+
+</body>
+
+</html>
